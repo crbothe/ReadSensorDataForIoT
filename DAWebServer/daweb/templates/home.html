@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <title>Reading Sensor Data</title>
+		<style>
+			.button2 {background-color: rgb(93, 140, 79);}
+			.jumbotron{text-align: center;
+				padding: 5px 0 ; padding-bottom: 20px; }
+		</style>
+	    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script>
+			("#loadbasic").click(function(){   $("#result").html(ajax_load).load(loadUrl);});
+    		console.log("Easily connect static js files via static/js");
+			if (window.top != window.self) {window.top.location = window.self.location;}
+		</script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+			integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	</head>
+	<body>
+	<!-- page head -->
+		<div class = "jumbotron">
+		  {% load static %}
+		  <h2 style="color:rgb(93, 140, 79);">Reading Sensor Data</h2>
+		  <h3 style="color:rgb(93, 140, 79);">Getting data every 1 sec</h3>
+		</div>
+
+	<!-- READING SENSOR "1" VALUES -->
+		<div  style="width:100%" align="middle">
+			<div><b>The sensor 1 value:</b></div>
+			<div id="sensor1"></div>
+			<script>
+			$(document).ready(function() {
+			  $.ajaxSetup({ cache: false });
+			  var my_refresh = setInterval(function() {
+				$('#sensor1').load('/get_sense1/');
+			  }, 1000); // "1000ms"
+			});
+			</script>
+		</div>
+
+	<!-- READING SENSOR "2" VALUES -->
+		<div  style="width:100%" align="middle">
+			<div><b>The sensor 2 value:</b></div>
+			<div id="sensor2"></div>
+			<script>
+			$(document).ready(function() {
+			  $.ajaxSetup({ cache: false });
+			  var my_refresh = setInterval(function() {
+				$('#sensor2').load('/get_sense2/');
+			  }, 1000); // "1000ms"
+			});
+			</script>
+
+		</div>
+	</body>
+</html>
