@@ -7,9 +7,9 @@ Django provides a great framework and its own project creation and app generatio
 
 Saying that, means you can not use these files and just run this code.
 
-Basically, you have to create your project with [Django](https://www.djangoproject.com/){:target="_blank"}. 
+Basically, you have to create your project with [Django](https://www.djangoproject.com/). 
 
-You can follow simple guidelines given here: [Start your first project and app with Django](https://docs.djangoproject.com/en/1.9/intro/tutorial01/){:target="_blank"}.
+You can follow simple guidelines given here: [Start your first project and app with Django](https://docs.djangoproject.com/en/1.9/intro/tutorial01/).
 
 I have provided the Django version 1.9 link here, because this project was tested with the same. However, you can try using recent version as well.
 
