@@ -11,12 +11,12 @@ Basically, you have to create your project with [Django](https://www.djangoproje
 
 You can follow simple guidelines given here: [Start your first project and app with Django](https://docs.djangoproject.com/en/1.9/intro/tutorial01/).
 
-I have provided the Django version 1.9 link here, because this project was tested with the same. However, you can try using recent version as well.
+I have provided the Django version 1.9 link here because this project was tested with the same. However, you can try using recent version as well.
 
 The main project starts under "DAWebServer" folder.
 
 ## Step one
-Create project using:
+Create a project using:
 ```sh
 django-admin startproject DAWebServer
 ```
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
 Edit other files according to following steps.
 
 ## Step two
-Create the "index" as general step in Django to host the "home.html".
+Create the "index" as a general step in Django to host the "home.html".
 Also, create the functions for reading your sensor data in "daweb/views.py"
 ```py
 def get_sense1(request):
@@ -55,21 +55,21 @@ Refer the created functions in "DAWebServer/urls.py"
 ## Step four
 Read and push the data to the webpage through "daweb/templates/home.html"
 ```html
-	<!-- READING SENSOR "1" VALUES -->
-		<div  style="width:100%" align="middle">
-			<div><b>The sensor 1 value:</b></div>
-			<div id="sensor1"></div>
-			<script>
-			$(document).ready(function() {
-			  $.ajaxSetup({ cache: false });
-			  var my_refresh = setInterval(function() {
-				$('#sensor1').load('/get_sense1/');
-			  }, 1000); // "1000ms"
-			});
-			</script>
-		</div>
+    <!-- READING SENSOR "1" VALUES -->
+        <div  style="width:100%" align="middle">
+            <div><b>The sensor 1 value:</b></div>
+            <div id="sensor1"></div>
+            <script>
+            $(document).ready(function() {
+              $.ajaxSetup({ cache: false });
+              var my_refresh = setInterval(function() {
+                $('#sensor1').load('/get_sense1/');
+              }, 1000); // "1000ms"
+            });
+            </script>
+        </div>
 ```
-This code is quite self-explainatory. It uses ajax js funciton from jquery which loaded through:	
+This code is quite self-explainatory. It uses ajax js funciton from jquery which loaded through:    
 ```html
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 ```
@@ -85,5 +85,7 @@ This allows you to access the webpage within the network at:
 ```sh
 http://0.0.0.0:8080/
 ```
+One can create such project and just copy paste the code of the respective files. You can also create interactive web interface by creating buttons to get the data. However, streaming the data is a challenge where this repository aims to solve it. 
+
 Enjoy continuous streaming of your sensor data to the webpages from the devices like RaspberryPi.
 
