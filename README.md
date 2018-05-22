@@ -67,7 +67,7 @@ Read and push the data to the webpage through "daweb/templates/home.html"
 			  }, 1000); // "1000ms"
 			});
 			</script>
-	</div>
+		</div>
 ```
 This code is quite self-explainatory. It uses ajax js funciton from jquery which loaded through:	
 ```html
@@ -85,4 +85,5 @@ This allows you to access the webpage within the network at:
 ```sh
 http://0.0.0.0:8080/
 ```
-Enjoy streaming your sensor data on webpage.
+Enjoy continuous streaming of your sensor data to the webpages from the devices like RaspberryPi.
+
